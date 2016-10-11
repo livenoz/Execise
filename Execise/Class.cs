@@ -69,7 +69,7 @@ namespace Execise
         }
         private int CheckHaveTax
         {
-            get { return Convert.ToInt32(Capacity > 0 && PriceUsd >= 0 && Tax >= 0); }
+            get { return Convert.ToInt32(CheckInvalidData == 1 && Tax >= 0); }
         }
         private double TotalValue
         {
