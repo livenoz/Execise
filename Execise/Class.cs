@@ -52,7 +52,7 @@ namespace Execise
             get
             {
                 var retults = new[] {null, (double?)TotalValue };
-                return retults[CheckHaveTax];
+                return retults[CheckDataAndHaveTax];
             }
         }
         public string MessageResult
@@ -60,14 +60,14 @@ namespace Execise
             get
             {
                 var results = new[] {"Invalid data", "No have tax", TotalValue.ToString("##,###.##")};
-                return results[CheckInvalidData + CheckHaveTax];
+                return results[CheckInvalidData + CheckDataAndHaveTax];
             }
         }
         private int CheckInvalidData
         {
             get { return Convert.ToInt32(Capacity > 0 && PriceUsd >= 0); }
         }
-        private int CheckHaveTax
+        private int CheckDataAndHaveTax
         {
             get { return Convert.ToInt32(CheckInvalidData == 1 && Tax >= 0); }
         }
